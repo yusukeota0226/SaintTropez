@@ -2,12 +2,13 @@ package com.example.sainttropez
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import io.repro.android.Repro
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         registerForContextMenu(imageView)
+
+        // Setup Repro
+        Repro.setup("d9f7c79d-c566-4756-9cca-c8225552dd10")
+        Repro.enablePushNotification()
+    }
+
+    fun onNewToken(token: String?) {
+        Repro.setPushRegistrationID(token)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

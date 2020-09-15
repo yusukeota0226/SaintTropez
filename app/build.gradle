@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
+        multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         applicationId "com.example.sainttropez"
         minSdkVersion 16
@@ -25,7 +27,17 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        maven { url 'https://cdn.reproio.com/android' }
+    }
+}
+
+
 dependencies {
+    implementation 'io.repro:repro-android-sdk:5.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation "org.jetbrains.anko:anko-common:$anko_version"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sainttropez">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +19,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver
+            android:name="io.repro.android.ReproReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.example.sainttropez" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="io.repro.android.PushNotification.ChannelId"
+            android:value="YOUR_CHANNEL_ID">
+        </meta-data>
+
+        <meta-data
+            android:name="io.repro.android.PushNotification.ChannelName"
+            android:resource="@string/YOUR_CHANNEL_NAME">
+        </meta-data>
+
+        <meta-data
+            android:name="io.repro.android.PushNotification.ChannelDescription"
+            android:resource="@string/YOUR_CHANNEL_DESCRIPTION">
+        </meta-data>
+
+        <meta-data
+            android:name="io.repro.android.PushNotification.ShowBadge"
+            android:value="true">
+        </meta-data>
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

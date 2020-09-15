@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "316178890743",
+    "firebase_url": "https://sampleproject-c33d6.firebaseio.com",
+    "project_id": "sampleproject-c33d6",
+    "storage_bucket": "sampleproject-c33d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316178890743:android:5360754a44e7028a9a78f2",
+        "android_client_info": {
+          "package_name": "com.example.sainttropez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316178890743-ca387fsno3hmfdq3ffq8o4aqv7iv6k7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWmUVus-CC7uGXYJSWMlna-QuTPJDoa2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316178890743-ca387fsno3hmfdq3ffq8o4aqv7iv6k7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
