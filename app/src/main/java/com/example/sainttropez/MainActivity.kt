@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.lunch01 -> {
                 imageView.setImageResource(R.drawable.lunch01)
-//                Repro.setUserID(Repro.getDeviceID())
-//                val userID = Repro.getUserID()
-//                print(userID)
+                Repro.setUserID(Repro.getDeviceID())
+                val userID = Repro.getUserID()
+                print(userID)
                 return true
             }
             R.id.lunch02 -> {
